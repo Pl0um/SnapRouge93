@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"flag"
 	"log"
 	"main/src/engine"
 	"net/http"
@@ -9,6 +11,14 @@ import (
 
 func main() {
 	var e engine.Engine
+	fullscreen := flag.Bool("fullscreen", false, "Active le mode plein écran")
+
+	flag.Parse()
+
+	if *fullscreen {
+		fmt.Println("Le mode plein écran est activé")
+
+	}
 
 	e.Init()
 	e.Load()
